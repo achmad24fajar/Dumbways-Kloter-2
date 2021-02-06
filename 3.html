@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Soal No 3</title>
+</head>
+<body>
+<script type="text/javascript">
+	function cetakPola(){
+		var text = '';
+		var space = ' ';
+
+		for(var i=0; i < 6; i++){
+			for(var a=0; a < 12; a++){
+				if(i == 0){
+					if(a >= 5 ){
+						text += '*';
+					} else {
+						text += space;
+					}
+				}
+
+				if(i == 1){
+					if(a == 4 || a == 10 ){
+						text += '*';
+					} else {
+						text += space;
+					}
+				}
+
+				if(i == 2){
+					if(a == 3 || a == 9 ){
+						text += '*';
+					} else {
+						text += space;
+					}
+
+				}
+
+				if(i == 3){
+					if(a == 2 || a == 8 ){
+						text += '*';
+					} else {
+						text += space;
+					}
+				}
+
+				if(i == 4){
+					if(a == 1 || a == 7 ){
+						text += '*';
+					} else {
+						text += space;
+					}
+				}
+
+				if(i == 5){
+					if(a <= 6 ){
+						text += '*';
+					} else {
+						text += space;
+					}
+				}
+			}
+			text += '\n';
+		}
+		for(var i=0; i < 6; i++){
+			for(var a=0; a < 12; a++){
+				if(i == 0){
+					if(a <= 5 ){
+						text += '*';
+					} else {
+						text += space;
+					}
+				}
+ 				//
+				if(i == 1){
+					if(a == 1 || a == 7 ){
+						text += '*';
+					} else {
+						text += space;
+					}
+				}
+
+				if(i == 2){
+					if(a == 2 || a == 8 ){
+						text += '*';
+					} else {
+						text += space;
+					}
+				}
+
+				if(i == 3){
+					if(a == 3 || a == 9 ){
+						text += '*';
+					} else {
+						text += space;
+					}
+				}
+
+				if(i == 4){
+					if(a == 4 || a == 10 ){
+						text += '*';
+					} else {
+						text += space;
+					}
+				}
+				//
+				if(i == 5){
+					if(a >= 6 ){
+						text += '*';
+					} else {
+						text += space;
+					}
+				}
+			}
+			text += '\n';
+		}
+
+		console.log(text);
+	}
+	cetakPola();
+</script>
+</body>
+</html>

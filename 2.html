@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Soal No 2</title>
+</head>
+<body>
+<script>
+	function filterKonversiArray(){
+
+		var array1 = ["apa", "saya", "anda", "kamu","hallo"];
+		var array2 = ["apa yang anda lakukan?", "selamat pagi", "kamu ternyata cantik juga ya", "yukk belajar javascript","kamu itu adalah kebanggaan saya", "music hari ini yang akan di putar oleh gabut FM apa ya?"];
+		var vocal = "i";
+
+		var kalimat = array2.join(" ");
+
+		var print1 = '';
+		var print2 = '';
+
+		for(var x of array1){
+			var regex = new RegExp(x, "g");
+			var hasil = kalimat.match(regex);
+
+			if(hasil == null ){
+				count = 0;
+			} else {
+				count = hasil.length;
+			}
+
+			print1 += "Kata "+x+" muncul sebanyak: "+count+" kali";
+			print1 += '\n';
+		}
+
+		for(var a=0; a < array2.length; a++) {
+			var regex = new RegExp("[aiueo]", "g");
+			hasil = array2[a].replace(regex, 'i');
+
+			print2 += array2[a] +" => "+ hasil ;
+			print2 += '\n';
+		}
+		console.log("HASIL FILTER DAN KONVERSI"+"\n"+
+		"=============================="+"\n"+
+		"Kata yang difilter muncul sebanyak:"+"\n"+
+		print1);
+		
+		console.log("=============================="+"\n"+
+		"Kalimat yang dikonversi berubah menjadi i"+"\n"+
+		print2);
+	}
+
+	filterKonversiArray()
+</script>
+</body>
+</html>

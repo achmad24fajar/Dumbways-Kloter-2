@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Soal No 1</title>
+</head>
+<body>
+
+<script type="text/javascript">
+	
+	function hitungGaji(golongan, jKelamin, status, jAnak){
+
+		var gajiPokok, tunjanganGolongan, tunjanganIstri, tunjanganAnak, total, pajak, gajiSementara, gajiBersih;
+		var pPensiun = 200000;
+		var potonganBPJS = 150000;
+
+		switch(golongan){
+			case 'Golongan I': 
+				gajiPokok = 1500000;
+				tunjanganGolongan = 200000;
+			break;
+			case 'Golongan II': 
+				gajiPokok = 2000000;
+				tunjanganGolongan = 400000;
+			break;
+			case 'Golongan III': 
+				gajiPokok = 3000000;
+				tunjanganGolongan = 600000;
+			break;
+			case 'Golongan IV': 
+				gajiPokok = 4000000;
+				tunjanganGolongan = 1000000;
+			break;
+			default: 
+				gajiPokok = "Golongan Belum di inputkan";
+		}
+
+		if(jKelamin == "Laki-laki"){
+			if(status == "Menikah"){
+				tunjanganIstri = 200000;
+				if(jAnak <= 2){
+					tunjanganAnak = jAnak * 100000;
+				} else
+				if(jAnak > 2) {
+					tunjanganAnak = 2 * 100000;
+				} else {
+					tunjanganAnak = 0;
+				}
+			} else {
+				tunjanganIstri = 0;
+			}
+		} else {
+			tunjanganIstri = 0;
+			if(jAnak <= 2){
+				tunjanganAnak = jAnak * 100000;
+			} else
+			if(jAnak > 2) {
+				tunjanganAnak = 2 * 100000;
+			} else {
+				tunjanganAnak = 0;
+			}
+		}
+
+		total = gajiPokok + tunjanganGolongan + tunjanganIstri + tunjanganAnak;
+		pajak = total * 10 / 100;
+		gajiSementara = total - pajak;
+		gajiBersih = gajiSementara - (pPensiun + potonganBPJS);
+
+
+
+		console.log("HASIL PERHITUNGAN GAJI"+'\n'+
+            	"=================================="+'\n'+
+            	"INFO PEGAWAI"+'\n'+
+            	"=================================="+'\n'+
+            	"Pegawai yang bersangkutan"+'\n'+
+            	"Golongan: "+golongan+'\n'+
+            	"Jenis Kelamin: "+jKelamin+'\n'+
+            	"Jumlah Anak: "+jAnak+'\n'+
+            	"=================================="+'\n'+
+            	"GAJI DAN TUNJANGAN"+'\n'+
+            	"=================================="+'\n'+
+            	"Gaji Pokok: "+gajiPokok+'\n'+
+            	"Tunjangan: "+tunjanganGolongan+'\n'+
+            	"Tunjangan Istri: "+tunjanganIstri+'\n'+
+            	"Tunjangan Anak: "+tunjanganAnak+'\n'+
+            	"Total: "+total+'\n'+
+            	"Pajak 10%: "+pajak+'\n'+
+            	"Gaji Sementara: "+gajiSementara+'\n'+
+            	"=================================="+'\n'+
+            	"GAJI BERSIH"+'\n'+
+            	"=================================="+'\n'+
+				"Potongan pensiun: "+pPensiun+'\n'+
+				"Potongan BPJS: "+potonganBPJS+'\n'+
+				"GAJI BERSIH: "+gajiBersih)
+	}
+
+	hitungGaji("Golongan IV","Perempuan","Menikah",1)
+</script>
+</body>
+</html>
