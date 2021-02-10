@@ -9,15 +9,14 @@
 
 		var array1 = ["apa", "saya", "anda", "kamu","hallo"];
 		var array2 = ["apa yang anda lakukan?", "selamat pagi", "kamu ternyata cantik juga ya", "yukk belajar javascript","kamu itu adalah kebanggaan saya", "music hari ini yang akan di putar oleh gabut FM apa ya?"];
-		var vocal = "i";
 
 		var kalimat = array2.join(" ");
 
 		var print1 = '';
 		var print2 = '';
 
-		for(var x of array1){
-			var regex = new RegExp(x, "g");
+		array1.forEach(function(e){
+			var regex = new RegExp(e, "g");
 			var hasil = kalimat.match(regex);
 
 			if(hasil == null ){
@@ -26,17 +25,40 @@
 				count = hasil.length;
 			}
 
-			print1 += "Kata "+x+" muncul sebanyak: "+count+" kali";
+			print1 += "Kata "+e+" muncul sebanyak: "+count+" kali";
 			print1 += '\n';
-		}
+		});
 
-		for(var a=0; a < array2.length; a++) {
+		// for(var x of array1){
+		// 	var regex = new RegExp(array1[x], "g");
+		// 	var hasil = kalimat.match(regex);
+
+		// 	if(hasil == null ){
+		// 		count = 0;
+		// 	} else {
+		// 		count = hasil.length;
+		// 	}
+
+		// 	print1 += "Kata "+x+" muncul sebanyak: "+count+" kali";
+		// 	print1 += '\n';
+		// }
+
+		array2.forEach(function(e){
 			var regex = new RegExp("[aiueo]", "g");
-			hasil = array2[a].replace(regex, 'i');
+			hasil = e.replace(regex, 'i');
 
-			print2 += array2[a] +" => "+ hasil ;
-			print2 += '\n';
-		}
+			print2 += e +" => "+ hasil ;
+			print2 += '\n'
+		})
+
+		// for(var a=0; a < array2.length; a++) {
+		// 	var regex = new RegExp("[aiueo]", "g");
+		// 	hasil = array2[a].replace(regex, 'i');
+
+		// 	print2 += array2[a] +" => "+ hasil ;
+		// 	print2 += '\n';
+		// }
+
 		console.log("HASIL FILTER DAN KONVERSI"+"\n"+
 		"=============================="+"\n"+
 		"Kata yang difilter muncul sebanyak:"+"\n"+

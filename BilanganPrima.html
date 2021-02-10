@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Bilangan Prima</title>
+</head>
+<body>
+
+	<script type="text/javascript">
+		function bilanganPrima(x){
+
+			var prima = [];
+
+			for (var i = 1; i <= x; i++) {
+				b = 0;
+				for(var w = 1; w <= i; w++){
+					if(i % w == 0){
+						b++;
+					}
+				}
+				if(b == 2){
+					prima.push(i);
+				}
+			}
+
+			console.log(prima);
+		}
+
+		bilanganPrima(5);
+	</script>
+</body>
+</html>
